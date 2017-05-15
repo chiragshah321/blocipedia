@@ -8,8 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-         <h1>Blocipedia</h1>
-<%= yield %>
+    <div class="container">
+     <ul class="nav nav-tabs">
+         <h1><%= link_to "Blocipedia", root_path %></h1>
+         <h1><%= link_to "Wikis", wikis_path %></h1>
+     </ul>
+
+     <%= yield %>
+   </div>
+    
+        
     
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
