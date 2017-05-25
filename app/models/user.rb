@@ -8,12 +8,9 @@ class User < ActiveRecord::Base
   
   enum role: [:standard, :premium, :admin]
   
-  has_one :role
-  
   after_initialize :init
   
   def init
     self.role ||= 0
   end
-         
 end

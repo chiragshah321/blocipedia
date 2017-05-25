@@ -2,6 +2,7 @@ class WikisController < ApplicationController
     
   def index
     @wikis = Wiki.all
+    authorize @wikis
   end
 
   def show
@@ -10,6 +11,7 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    authorize @wiki
   end
   
   def create
