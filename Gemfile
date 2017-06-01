@@ -18,7 +18,7 @@
  gem 'jquery-rails'
  gem 'turbolinks'
  # gem 'bootstrap'
- gem 'figaro'
+ gem 'figaro', '1.0'
  gem 'bootstrap-sass', '~> 3.3.6'
  gem 'sass-rails', '>= 3.2'
  gem 'devise'
@@ -32,4 +32,5 @@
    gem 'faker'
    gem 'factory_girl_rails', '~> 4.0'
    gem 'pry-rails'
+   gem 'stripe'
  end
