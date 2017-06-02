@@ -9,11 +9,11 @@ class WikiPolicy < ApplicationPolicy
   end
   
   def edit?
-    user.standard?
+    user.standard? || user.premium? || user.admin?
   end
   
   def delete?
-    user.standard?
+    user.standard? || user.premium? || user.admin? 
   end
   
 end
