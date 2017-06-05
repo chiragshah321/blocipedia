@@ -12,7 +12,7 @@
   <% if current_user.admin? || current_user.premium? %>
   <div class="form-group">
     <%= f.label :private, class: 'checkbox', as: :private do %>
-      <%= f.check_box :private, {}, "true", "false" %> Private wiki
+      <%= f.check_box :private, {}, "true", "false" %> Private Wiki
     <% end %>
   </div>
  <% end %>
@@ -20,6 +20,7 @@
      <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
   <% end %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= form_group_tag(wiki.errors[:body]) do %>
      <%= f.label :body %>
      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>

@@ -43,7 +43,8 @@ class ChargesController < ApplicationController
  def downgrade
     if current_user.premium?
        current_user.update_attribute(:role, 'standard')
-       flash[:notice] = "You have now been downgraded to a Standard Account, #{current_user.email}"
+       #update all wiki privacy settings associated with user id to nil 
+       flash[:notice] = "You have now been downgraded to a Standard Account and your wikis will no longer be private, #{current_user.email}"
        redirect_to root_path
     else
       flash[:notice] = "You have a standard account, #{current_user.email}"
