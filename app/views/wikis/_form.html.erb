@@ -20,7 +20,6 @@
      <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
   <% end %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= form_group_tag(wiki.errors[:body]) do %>
      <%= f.label :body %>
      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>

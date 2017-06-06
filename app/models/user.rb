@@ -12,7 +12,23 @@ class User < ActiveRecord::Base
   
   after_initialize :init
   
+  after_update :wikidowngrade
+  
   def init
     self.role ||= 0
   end
+  
+  private
+  
+  def wikidowngrade
+    return unless role_was == 'premium' && role == 'standard'
+    
+    wikis.each do |wiki|
+      wiki.update_attribute(:private, nil) if wiki.private 
+    end
+  end
 end
+
+
+
+
