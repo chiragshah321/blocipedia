@@ -33,4 +33,5 @@
    gem 'factory_girl_rails', '~> 4.0'
    gem 'pry-rails'
    gem 'stripe'
+   gem 'redcarpet'
  end
