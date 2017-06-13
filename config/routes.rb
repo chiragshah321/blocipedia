@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   resources :users 
   
+  resources :collaborators, only: [:create, :destroy]
+
   root 'welcome#index'
   
   get 'about' => 'welcome#about'
