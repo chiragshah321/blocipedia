@@ -1,6 +1,5 @@
  <h1>All Public Wikis</h1>
  <% @wikis.each do |wiki| %>
- <% if public_wiki?(wiki) %>
  <div class="media">
      <div class="media-body">
        <h4 class="media-heading">
@@ -8,7 +7,6 @@
        </h4>
      </div>
    </div>
- <% end %>
  <% end %>
  
  <h1>All Private Wikis</h1>

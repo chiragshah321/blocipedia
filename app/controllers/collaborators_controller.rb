@@ -1,10 +1,9 @@
 class CollaboratorsController < ApplicationController
 
   def create
-
-    @collaborator = Collaborator.new(params[:id])
     @wiki = Wiki.find(params[:wiki_id])
-    @user = User.where(email: params[:email]).take
+    @user = User.find_by_email(params[:email])
+    @collaborator = Collaborator.new(wiki: @wiki, user: @user)
 
     if @collaborator.save 
         flash[:notice] = "Your collaborator has been added to the wiki."
@@ -17,7 +16,6 @@ class CollaboratorsController < ApplicationController
 
 
   def destroy
-
     @collaborator = Collaborator.find(params[:id])
     @wiki = @collaborator.wiki
 
